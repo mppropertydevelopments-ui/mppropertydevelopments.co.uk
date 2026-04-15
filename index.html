@@ -133,14 +133,15 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 .trust-item svg{width:14px;height:14px;stroke:#3a6fd8;stroke-width:2.5;fill:none;flex-shrink:0;}
 .trust-divider{width:3px;height:3px;background:rgba(255,255,255,0.15);border-radius:50%;}
 
-/* SERVICES STRIP TICKER */
+/* SERVICES STRIP TICKER
+   JS at bottom of file measures exact pixel width of one item-set and injects
+   a pixel-perfect keyframe — eliminates the subpixel rounding gap between loops. */
 .services-strip{background:#3a6fd8;overflow:hidden;position:relative;}
 .services-strip::before,.services-strip::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;}
 .services-strip::before{left:0;background:linear-gradient(to right,#3a6fd8,transparent);}
 .services-strip::after{right:0;background:linear-gradient(to left,#3a6fd8,transparent);}
-.services-strip-track{display:flex;width:max-content;animation:strip-ticker 28s linear infinite;}
+.services-strip-track{display:flex;width:max-content;will-change:transform;}
 .services-strip-track:hover{animation-play-state:paused;}
-@keyframes strip-ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 .strip-item{display:flex;align-items:center;gap:8px;padding:16px 26px;flex-shrink:0;border-right:1px solid rgba(255,255,255,0.15);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:0.5px;cursor:default;transition:color 0.2s;white-space:nowrap;}
 .strip-item:hover{color:#fff;}
 
@@ -179,6 +180,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 
 /* PORTFOLIO */
 .portfolio{padding:88px 32px;background:#f7f7f5;}
+/* color:transparent on portfolio-inner hides stray text node artifacts */
+.portfolio-inner{color:transparent;}
+.portfolio-inner>*{color:#111;}
 .portfolio-inner{max-width:1100px;margin:0 auto;}
 .portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;gap:20px;flex-wrap:wrap;}
 .insta-link{display:inline-flex;align-items:center;gap:8px;background:#1c1c1e;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;transition:background 0.2s;flex-shrink:0;}
@@ -645,6 +649,9 @@ footer{background:#111;padding:36px 32px;}
         </div>
       </div>
       <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeevovjg" method="POST">
+        <!-- Tells Formspree to redirect to your thank-you page after submission -->
+        <!-- GTM fires GA4 + Google Ads conversion tags on that page load -->
+        <input type="hidden" name="_next" value="https://mppropertydevelopments.co.uk/thank-you.html"/>
         <div class="form-row">
           <div class="form-group"><label for="f-name">Your Name</label><input type="text" id="f-name" name="name" placeholder="John Smith" required/></div>
           <div class="form-group"><label for="f-phone">Phone Number</label><input type="tel" id="f-phone" name="phone" placeholder="07700 900000" required/></div>
@@ -691,6 +698,35 @@ footer{background:#111;padding:36px 32px;}
 </footer>
 
 <script>
+// ══ SERVICES STRIP TICKER — pixel-perfect seamless loop ══
+// Measures the exact rendered width of one set of items in whole pixels,
+// then injects a keyframe using that value. No percentage rounding = no gap.
+(function() {
+  var track = document.querySelector('.services-strip-track');
+  if (!track) return;
+  var allItems = track.querySelectorAll('.strip-item');
+  var halfCount = allItems.length / 2;
+  // Measure width of first set of items
+  function initTicker() {
+    var setWidth = 0;
+    for (var i = 0; i < halfCount; i++) {
+      setWidth += allItems[i].getBoundingClientRect().width;
+    }
+    setWidth = Math.round(setWidth);
+    if (setWidth === 0) { setTimeout(initTicker, 100); return; }
+    var style = document.createElement('style');
+    style.textContent = '@keyframes strip-px { 0% { transform: translateX(0); } 100% { transform: translateX(-' + setWidth + 'px); } }';
+    document.head.appendChild(style);
+    track.style.animation = 'strip-px 28s linear infinite';
+  }
+  // Wait for fonts/layout to settle before measuring
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(initTicker);
+  } else {
+    window.addEventListener('load', initTicker);
+  }
+})();
+
 // ══ COOKIE CONSENT ══
 (function() {
   var stored = localStorage.getItem('mppd_consent');
