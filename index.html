@@ -27,8 +27,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-<!-- GTM consent mode — replace GTM-XXXXXXX with your container ID -->
-
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -64,7 +62,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#f7f7f5;color:#111;-w
 img{max-width:100%;display:block;}
 a{color:inherit;}
 
-/* COOKIE BANNER */
 .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1c1c1e;color:rgba(255,255,255,0.85);padding:20px 28px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:2px solid #3a6fd8;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);}
 .cookie-banner.visible{transform:translateY(0);}
 .cookie-banner-content{flex:1;min-width:260px;}
@@ -78,7 +75,6 @@ a{color:inherit;}
 .cookie-btn-reject{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.15);}
 .cookie-btn-reject:hover{background:rgba(255,255,255,0.14);}
 
-/* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:14px;border-radius:8px;transition:transform 0.15s,background 0.2s;cursor:pointer;border:none;font-family:inherit;letter-spacing:0.3px;}
 .btn:hover{transform:translateY(-2px);}
 .btn-primary{background:#3a6fd8;color:#fff;padding:14px 28px;}
@@ -88,7 +84,6 @@ a{color:inherit;}
 .btn-outline{background:transparent;color:#111;padding:13px 24px;border:2px solid #ddd;}
 .btn-outline:hover{border-color:#3a6fd8;color:#3a6fd8;}
 
-/* NAV */
 nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 32px;}
 .nav-inner{max-width:1100px;margin:0 auto;height:66px;display:flex;align-items:center;justify-content:space-between;}
 .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
@@ -112,10 +107,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 .nav-mobile a{text-decoration:none;font-size:22px;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:rgba(255,255,255,0.8);padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.08);display:block;text-transform:uppercase;letter-spacing:0.5px;}
 .nav-mobile a:last-child{border-bottom:none;color:#3a6fd8;}
 
-/* HERO
-   INSTRUCTIONS: Upload a landscape project photo as hero.jpg to show behind the overlay.
-   If no hero.jpg is uploaded, the section shows the solid dark background colour instead.
-*/
 .hero{background:#1c1c1e;position:relative;overflow:hidden;padding:96px 32px 88px;}
 .hero-bg{position:absolute;inset:0;background-image:url('hero.jpg');background-size:cover;background-position:center;opacity:0.18;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(28,28,30,0.95) 0%,rgba(28,28,30,0.7) 100%);}
@@ -133,9 +124,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 .trust-item svg{width:14px;height:14px;stroke:#3a6fd8;stroke-width:2.5;fill:none;flex-shrink:0;}
 .trust-divider{width:3px;height:3px;background:rgba(255,255,255,0.15);border-radius:50%;}
 
-/* SERVICES STRIP TICKER
-   JS at bottom of file measures exact pixel width of one item-set and injects
-   a pixel-perfect keyframe — eliminates the subpixel rounding gap between loops. */
+/* SERVICES STRIP TICKER — JS measures exact pixel width, no gap on loop */
 .services-strip{background:#3a6fd8;overflow:hidden;position:relative;}
 .services-strip::before,.services-strip::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;}
 .services-strip::before{left:0;background:linear-gradient(to right,#3a6fd8,transparent);}
@@ -145,13 +134,11 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 .strip-item{display:flex;align-items:center;gap:8px;padding:16px 26px;flex-shrink:0;border-right:1px solid rgba(255,255,255,0.15);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:0.5px;cursor:default;transition:color 0.2s;white-space:nowrap;}
 .strip-item:hover{color:#fff;}
 
-/* SECTION HELPERS */
 .section-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:700;color:#3a6fd8;margin-bottom:12px;display:block;}
 .section-h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,3.5vw,50px);font-weight:900;line-height:1.0;letter-spacing:-0.5px;text-transform:uppercase;color:#111;margin-bottom:16px;}
 .section-h2 em{font-style:normal;color:#3a6fd8;}
 .section-h2-light{color:#fff;}
 
-/* ABOUT */
 .about{padding:88px 32px;background:#fff;}
 .about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
 .about-body p{font-size:16px;color:#4a4a4a;line-height:1.75;font-weight:300;margin-bottom:16px;}
@@ -165,7 +152,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 .aci-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:2px;text-transform:uppercase;letter-spacing:0.3px;}
 .aci-sub{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.4;}
 
-/* SERVICES */
 .services{background:#1c1c1e;padding:88px 32px;}
 .services-inner{max-width:1100px;margin:0 auto;}
 .services-header{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:40px;margin-bottom:48px;}
@@ -178,23 +164,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 .svc-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:6px;}
 .svc-desc{font-size:12.5px;color:rgba(255,255,255,0.42);line-height:1.65;font-weight:300;}
 
-/* PORTFOLIO */
 .portfolio{padding:88px 32px;background:#f7f7f5;}
-/* color:transparent on portfolio-inner hides stray text node artifacts */
-.portfolio-inner{color:transparent;}
+/* color:transparent hides stray text node artifacts from code editors */
+.portfolio-inner{color:transparent;max-width:1100px;margin:0 auto;}
 .portfolio-inner>*{color:#111;}
-.portfolio-inner{max-width:1100px;margin:0 auto;}
 .portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;gap:20px;flex-wrap:wrap;}
 .insta-link{display:inline-flex;align-items:center;gap:8px;background:#1c1c1e;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;transition:background 0.2s;flex-shrink:0;}
 .insta-link:hover{background:#333;}
 .insta-link svg{width:16px;height:16px;fill:white;}
-/* Portfolio grid
-   INSTRUCTIONS: Replace p-cell-placeholder divs with <img> tags as you get more photos.
-   e.g. <img src="project3.png" alt="Brickwork project, Yorkshire"/>
-   project1.png = tall featured cell (left, spans full height)
-   project2.png = top-right cell
-   Remaining 3 cells still show placeholders until you have photos ready.
-*/
 .portfolio-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px;border-radius:12px;overflow:hidden;}
 .p-cell{background:#ddd;position:relative;overflow:hidden;}
 .p-cell.tall{grid-row:1/3;}
@@ -206,25 +183,20 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 .portfolio-cta{text-align:center;margin-top:28px;}
 .portfolio-cta p{font-size:14px;color:#888;margin-bottom:14px;}
 
-/* PROCESS — scroll-highlighted steps */
 .process{padding:88px 32px;background:#fff;}
 .process-inner{max-width:1100px;margin:0 auto;}
 .process-header{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:40px;margin-bottom:56px;}
 .process-header p{font-size:15px;color:#666;line-height:1.7;font-weight:300;}
 .process-steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
-/* Grey connector line underneath all steps */
 .process-steps::before{content:'';position:absolute;top:28px;left:calc(12.5% + 14px);right:calc(12.5% + 14px);height:2px;background:#e0e0e0;z-index:0;}
-/* Blue progress line — fills in as steps activate via JS */
 .process-steps::after{content:'';position:absolute;top:28px;left:calc(12.5% + 14px);height:2px;background:#3a6fd8;z-index:0;width:0;transition:width 0.5s ease;}
 .process-step{padding:0 16px;position:relative;z-index:1;}
 .p-step-num{width:56px;height:56px;background:#f7f7f5;border:2px solid #ddd;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;color:#bbb;margin-bottom:20px;transition:background 0.4s,border-color 0.4s,color 0.4s,box-shadow 0.4s;position:relative;z-index:1;}
-/* Active state — blue fill, number stays white and visible */
 .process-step.active .p-step-num{background:#3a6fd8;border-color:#3a6fd8;color:#fff;box-shadow:0 0 0 6px rgba(58,111,216,0.12);}
 .p-step-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:8px;color:#111;transition:color 0.3s;}
 .process-step.active .p-step-title{color:#3a6fd8;}
 .p-step-body{font-size:13px;color:#666;line-height:1.65;font-weight:300;}
 
-/* TESTIMONIALS */
 .testimonials{padding:88px 32px;background:#f7f7f5;}
 .testimonials-inner{max-width:1100px;margin:0 auto;}
 .testimonials-header{margin-bottom:40px;}
@@ -236,10 +208,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 .t-name{font-size:13px;font-weight:700;color:#111;}
 .t-location{font-size:11px;color:#999;margin-top:1px;}
 .t-ph{background:#f7f7f5;border:2px dashed #ddd;border-radius:12px;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:180px;text-align:center;}
-.t-ph strong{font-size:13px;color:#666;}
+.t-ph strong{font-size:13px;color:#333;}
 .t-ph p{font-size:12px;color:#999;line-height:1.5;}
 
-/* QUOTE CTA */
 .quote-cta{background:#1c1c1e;padding:88px 32px;position:relative;overflow:hidden;}
 .quote-cta::before{content:'QUOTE';position:absolute;right:-20px;top:50%;transform:translateY(-50%) rotate(90deg);font-family:'Barlow Condensed',sans-serif;font-size:140px;font-weight:900;color:rgba(255,255,255,0.02);letter-spacing:-4px;pointer-events:none;white-space:nowrap;}
 .quote-cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;position:relative;z-index:1;}
@@ -253,7 +224,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 .quote-card-sub{font-size:13px;color:rgba(255,255,255,0.3);margin-bottom:24px;font-weight:300;line-height:1.5;}
 .quote-card-note{font-size:11px;color:rgba(255,255,255,0.2);text-align:center;margin-top:12px;}
 
-/* CONTACT */
 .contact{padding:88px 32px;background:#fff;border-top:1px solid #eee;}
 .contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start;}
 .contact-left h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,3.5vw,46px);font-weight:900;text-transform:uppercase;letter-spacing:-0.5px;color:#111;margin-top:12px;margin-bottom:16px;}
@@ -282,7 +252,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,28,30,0.97);backdrop-fi
 .form-submit:hover{background:#2a54b0;transform:translateY(-1px);}
 .form-note{font-size:11.5px;color:#999;text-align:center;margin-top:4px;}
 
-/* FOOTER */
 footer{background:#111;padding:36px 32px;}
 .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 .footer-brand{display:flex;align-items:center;gap:12px;}
@@ -293,7 +262,6 @@ footer{background:#111;padding:36px 32px;}
 .footer-links a{text-decoration:none;color:rgba(255,255,255,0.25);font-size:12px;transition:color 0.2s;}
 .footer-links a:hover{color:rgba(255,255,255,0.6);}
 
-/* RESPONSIVE */
 @media(max-width:900px){
   .hero{padding:72px 24px 64px;}
   .about-inner,.process-header,.services-header,.quote-cta-inner,.contact-inner{grid-template-columns:1fr;gap:40px;}
@@ -326,11 +294,7 @@ footer{background:#111;padding:36px 32px;}
 </head>
 <body>
 
-<!-- GTM body snippet — replace GTM-XXXXXXX -->
-
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLMPMWC8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-<!-- COOKIE CONSENT BANNER -->
 
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
   <div class="cookie-banner-content">
@@ -378,7 +342,6 @@ footer{background:#111;padding:36px 32px;}
 
 <section>
   <div class="hero">
-    <!-- hero.jpg displays here if uploaded — shows as dark overlay background -->
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-blue-tint"></div>
@@ -402,7 +365,6 @@ footer{background:#111;padding:36px 32px;}
 </section>
 
 <div class="services-strip">
-  <!-- Items are duplicated so the loop is seamless — do not remove the second set -->
   <div class="services-strip-track">
     <div class="strip-item">🏠 Extensions</div>
     <div class="strip-item">🏗️ New Builds</div>
@@ -490,43 +452,32 @@ footer{background:#111;padding:36px 32px;}
         </a>
       </div>
       <div class="portfolio-grid">
-
-    <!-- CELL 1: tall featured image — project1.png is shown here -->
-    <div class="p-cell tall">
-      <img src="project1.png" alt="MP Property Developments — featured project, Yorkshire"/>
-      <div class="p-label">Featured Project</div>
+        <div class="p-cell tall">
+          <img src="project1.png" alt="MP Property Developments — featured project, Yorkshire"/>
+          <div class="p-label">Featured Project</div>
+        </div>
+        <div class="p-cell">
+          <img src="project2.png" alt="Patio and landscaping, Yorkshire"/>
+          <div class="p-label">Patio</div>
+        </div>
+        <div class="p-cell">
+          <img src="project3.png" alt="Brickwork, Yorkshire"/>
+          <div class="p-label">Brickwork</div>
+        </div>
+        <div class="p-cell">
+          <img src="project4.png" alt="Garage building, Yorkshire"/>
+          <div class="p-label">Garage</div>
+        </div>
+        <div class="p-cell">
+          <img src="project5.png" alt="Extensions, Yorkshire"/>
+          <div class="p-label">Extension</div>
+        </div>
+      </div>
+      <div class="portfolio-cta">
+        <p>We post all our latest projects on Instagram — follow us for regular updates.</p>
+        <a href="https://www.instagram.com/mppropertydevelopments" target="_blank" rel="noopener" class="btn btn-primary">Follow @mppropertydevelopments →</a>
+      </div>
     </div>
-
-    <!-- CELL 2: project2.png is shown here -->
-    <div class="p-cell">
-      <img src="project2.png" alt="Patio and landscaping, Yorkshire"/>
-      <div class="p-label">Patio</div>
-    </div>
-
-    <!-- CELLS 3–5: placeholders until you have more photos.
-         To add more photos: upload project3.png, project4.png, project5.png
-         then replace each p-cell-placeholder div with:
-         <img src="projectN.png" alt="[describe the project]"/> -->
-    <div class="p-cell">
-      <img src="project3.png" alt="Brickwork, Yorkshire"/>div>
-      <div class="p-label">Brickwork</div>
-    </div>
-    <div class="p-cell">
-      <img src="project4.png" alt="Garage building, Yorkshire"/>div>
-      <div class="p-label">Garage</div>
-    </div>
-    <div class="p-cell">
-      <img src="project5.png" alt="Extensions, Yorkshire"/>div>
-      <div class="p-label">Extension</div>
-    </div>
-
-  </div>
-  <div class="portfolio-cta">
-    <p>We post all our latest projects on Instagram — follow us for regular updates.</p>
-    <a href="https://www.instagram.com/mppropertydevelopments" target="_blank" rel="noopener" class="btn btn-primary">Follow @mppropertydevelopments →</a>
-  </div>
-</div>
-
   </div>
 </section>
 
@@ -574,7 +525,7 @@ footer{background:#111;padding:36px 32px;}
         <h2 class="section-h2">Don't just take <em>our word</em> for it</h2>
       </div>
       <div class="testimonials-grid">
-        <div class="t-ph"><strong>"Mitchell did an incredible job with our patio. Completing the work fast and efficiently, sourcing all the materials and tidying everything up. Perfect for the summer, thanks Mitch!"</strong><p>Jordan & Abi, Patio, Sherburn-In-Elmet</p></div>
+        <div class="t-ph"><strong>"Mitchell did an incredible job with our patio. Completing the work fast and efficiently, sourcing all the materials and tidying everything up. Perfect for the summer, thanks Mitch!"</strong><p>Jordan &amp; Abi, Patio, Sherburn-In-Elmet</p></div>
         <div class="t-ph"><strong>Customer review pending</strong><p>More reviews coming soon...</p></div>
         <div class="t-ph"><strong>Customer review pending</strong><p>More reviews coming soon...</p></div>
       </div>
@@ -621,7 +572,6 @@ footer{background:#111;padding:36px 32px;}
           </div>
           <div class="contact-detail">
             <div class="cd-icon">✉️</div>
-            <!-- Email uses HTML entity for @ to prevent Cloudflare obfuscation -->
             <div><div class="cd-lbl">Email</div><div class="cd-val"><a href="mailto:contact&#64;mppropertydevelopments.co.uk">contact&#64;mppropertydevelopments.co.uk</a></div></div>
           </div>
           <div class="contact-detail">
@@ -646,36 +596,42 @@ footer{background:#111;padding:36px 32px;}
           </div>
         </div>
       </div>
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeevovjg" method="POST">
-        <!-- Tells Formspree to redirect to your thank-you page after submission -->
-        <!-- GTM fires GA4 + Google Ads conversion tags on that page load -->
-        <input type="hidden" name="_next" value="https://mppropertydevelopments.co.uk/thank-you.html"/>
-        <div class="form-row">
-          <div class="form-group"><label for="f-name">Your Name</label><input type="text" id="f-name" name="name" placeholder="John Smith" required/></div>
-          <div class="form-group"><label for="f-phone">Phone Number</label><input type="tel" id="f-phone" name="phone" placeholder="07700 900000" required/></div>
-        </div>
-        <div class="form-group"><label for="f-email">Email Address</label><input type="email" id="f-email" name="email" placeholder="john@example.com" required/></div>
-        <div class="form-group">
-          <label for="f-service">What do you need?</label>
-          <select id="f-service" name="service">
-            <option value="">Select a service…</option>
-            <option>Extension</option>
-            <option>New Build</option>
-            <option>Patio &amp; Landscaping</option>
-            <option>Brickwork / Garden Wall</option>
-            <option>House Renovation</option>
-            <option>Kitchen or Bathroom</option>
-            <option>Structural Alterations</option>
-            <option>Roofing</option>
-            <option>Joinery</option>
-            <option>Other / Not Sure</option>
-          </select>
-        </div>
-        <div class="form-group"><label for="f-msg">Tell us about the job</label><textarea id="f-msg" name="message" placeholder="Describe the work — size, location, rough timescale if you have one…"></textarea></div>
-        <button type="submit" class="form-submit">Send Enquiry →</button>
-        <p class="form-note">🔒 Your details are never shared. We'll get back to you within 24 hours.</p>
-      </form>
+
+```
+  <!-- CONTACT FORM
+       No _next redirect needed — form submits via AJAX (fetch) below.
+       GTM conversion tags fire on this page immediately after Formspree confirms success.
+       No paid Formspree plan required for this to work. -->
+  <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeevovjg" method="POST">
+    <div class="form-row">
+      <div class="form-group"><label for="f-name">Your Name</label><input type="text" id="f-name" name="name" placeholder="John Smith" required/></div>
+      <div class="form-group"><label for="f-phone">Phone Number</label><input type="tel" id="f-phone" name="phone" placeholder="07700 900000" required/></div>
     </div>
+    <div class="form-group"><label for="f-email">Email Address</label><input type="email" id="f-email" name="email" placeholder="john@example.com" required/></div>
+    <div class="form-group">
+      <label for="f-service">What do you need?</label>
+      <select id="f-service" name="service">
+        <option value="">Select a service…</option>
+        <option>Extension</option>
+        <option>New Build</option>
+        <option>Patio &amp; Landscaping</option>
+        <option>Brickwork / Garden Wall</option>
+        <option>House Renovation</option>
+        <option>Kitchen or Bathroom</option>
+        <option>Structural Alterations</option>
+        <option>Roofing</option>
+        <option>Joinery</option>
+        <option>Other / Not Sure</option>
+      </select>
+    </div>
+    <div class="form-group"><label for="f-msg">Tell us about the job</label><textarea id="f-msg" name="message" placeholder="Describe the work — size, location, rough timescale if you have one…"></textarea></div>
+    <button type="submit" class="form-submit">Send Enquiry →</button>
+    <p class="form-note">🔒 Your details are never shared. We'll get back to you within 24 hours.</p>
+  </form>
+
+</div>
+```
+
   </div>
 </section>
 
@@ -697,14 +653,14 @@ footer{background:#111;padding:36px 32px;}
 
 <script>
 // ══ SERVICES STRIP TICKER — pixel-perfect seamless loop ══
-// Measures the exact rendered width of one set of items in whole pixels,
-// then injects a keyframe using that value. No percentage rounding = no gap.
+// Waits for fonts to load before measuring item widths, then injects a keyframe
+// using exact pixel values. No percentage rounding = no visible gap on any loop.
 (function() {
   var track = document.querySelector('.services-strip-track');
   if (!track) return;
   var allItems = track.querySelectorAll('.strip-item');
   var halfCount = allItems.length / 2;
-  // Measure width of first set of items
+
   function initTicker() {
     var setWidth = 0;
     for (var i = 0; i < halfCount; i++) {
@@ -713,11 +669,11 @@ footer{background:#111;padding:36px 32px;}
     setWidth = Math.round(setWidth);
     if (setWidth === 0) { setTimeout(initTicker, 100); return; }
     var style = document.createElement('style');
-    style.textContent = '@keyframes strip-px { 0% { transform: translateX(0); } 100% { transform: translateX(-' + setWidth + 'px); } }';
+    style.textContent = '@keyframes strip-px{0%{transform:translateX(0);}100%{transform:translateX(-' + setWidth + 'px);}}';
     document.head.appendChild(style);
     track.style.animation = 'strip-px 28s linear infinite';
   }
-  // Wait for fonts/layout to settle before measuring
+
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(initTicker);
   } else {
@@ -728,9 +684,8 @@ footer{background:#111;padding:36px 32px;}
 // ══ COOKIE CONSENT ══
 (function() {
   var stored = localStorage.getItem('mppd_consent');
-  if (stored === 'accepted') {
-    updateConsent('granted');
-  } else if (!stored) {
+  if (stored === 'accepted') { updateConsent('granted'); }
+  else if (!stored) {
     setTimeout(function() {
       var b = document.getElementById('cookieBanner');
       if (b) b.classList.add('visible');
@@ -741,21 +696,17 @@ footer{background:#111;padding:36px 32px;}
 function updateConsent(state) {
   if (typeof gtag === 'function') {
     gtag('consent','update',{
-      'analytics_storage':state,
-      'ad_storage':state,
-      'ad_user_data':state,
-      'ad_personalization':state
+      'analytics_storage':state,'ad_storage':state,
+      'ad_user_data':state,'ad_personalization':state
     });
   }
 }
-
 function acceptCookies() {
   localStorage.setItem('mppd_consent','accepted');
   updateConsent('granted');
   var b = document.getElementById('cookieBanner');
   if (b) b.classList.remove('visible');
 }
-
 function rejectCookies() {
   localStorage.setItem('mppd_consent','rejected');
   updateConsent('denied');
@@ -768,33 +719,15 @@ var hamburger = document.getElementById('hamburger');
 var mobileNav = document.getElementById('mobileNav');
 hamburger.addEventListener('click', function() {
   var isOpen = mobileNav.classList.contains('open');
-  if (isOpen) {
-    mobileNav.classList.remove('open');
-    hamburger.classList.remove('open');
-    document.body.style.overflow = '';
-  } else {
-    mobileNav.classList.add('open');
-    hamburger.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
+  if (isOpen) { mobileNav.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow = ''; }
+  else { mobileNav.classList.add('open'); hamburger.classList.add('open'); document.body.style.overflow = 'hidden'; }
 });
-function closeNav() {
-  mobileNav.classList.remove('open');
-  hamburger.classList.remove('open');
-  document.body.style.overflow = '';
-}
+function closeNav() { mobileNav.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow = ''; }
 
 // ══ PROCESS STEP HIGHLIGHTING ══
-// Desktop (>900px): scroll-progress lights steps cumulatively with blue fill.
-//   Numbers stay visible in white because active .p-step-num sets color:#fff.
-// Mobile (≤900px): steps stack vertically — closest to viewport centre lights up.
-// Both directions (scrolling up and down) work correctly.
-
 var pStepEls = [
-  document.getElementById('pstep-0'),
-  document.getElementById('pstep-1'),
-  document.getElementById('pstep-2'),
-  document.getElementById('pstep-3')
+  document.getElementById('pstep-0'),document.getElementById('pstep-1'),
+  document.getElementById('pstep-2'),document.getElementById('pstep-3')
 ];
 var processSection = document.getElementById('processSteps');
 var progressStyle = document.createElement('style');
@@ -803,23 +736,18 @@ document.head.appendChild(progressStyle);
 function setPStepsUpTo(idx) {
   for (var j = 0; j < pStepEls.length; j++) {
     if (!pStepEls[j]) continue;
-    if (j <= idx) { pStepEls[j].classList.add('active'); }
-    else { pStepEls[j].classList.remove('active'); }
+    if (j <= idx) { pStepEls[j].classList.add('active'); } else { pStepEls[j].classList.remove('active'); }
   }
   var widths = ['0%','33%','66%','100%'];
   var pct = idx < 0 ? '0%' : (widths[idx] || '0%');
-  // Orange progress line replaced with blue (#3a6fd8) to match site palette
-  progressStyle.textContent = '.process-steps::after { width: calc(' + pct + ' * 0.75) !important; }';
+  progressStyle.textContent = '.process-steps::after{width:calc(' + pct + ' * 0.75)!important;}';
 }
-
 function setPStepSingle(idx) {
   for (var j = 0; j < pStepEls.length; j++) {
     if (!pStepEls[j]) continue;
-    if (j === idx) { pStepEls[j].classList.add('active'); }
-    else { pStepEls[j].classList.remove('active'); }
+    if (j === idx) { pStepEls[j].classList.add('active'); } else { pStepEls[j].classList.remove('active'); }
   }
 }
-
 function updateProcessDesktop() {
   if (!processSection) return;
   var r = processSection.getBoundingClientRect();
@@ -832,15 +760,12 @@ function updateProcessDesktop() {
   if (scrolled >= 0.58) idx = 3;
   setPStepsUpTo(idx);
 }
-
 function updateProcessMobile() {
   if (!processSection) return;
   var mid = window.innerHeight / 2;
-  var bestIdx = -1;
-  var bestDist = Infinity;
+  var bestIdx = -1; var bestDist = Infinity;
   for (var i = 0; i < pStepEls.length; i++) {
-    var el = pStepEls[i];
-    if (!el) continue;
+    var el = pStepEls[i]; if (!el) continue;
     var r = el.getBoundingClientRect();
     if (r.bottom < 0 || r.top > window.innerHeight) continue;
     var dist = Math.abs(r.top + r.height / 2 - mid);
@@ -848,24 +773,71 @@ function updateProcessMobile() {
   }
   setPStepSingle(bestIdx);
 }
-
 function updateProcess() {
-  if (window.innerWidth > 900) { updateProcessDesktop(); }
-  else { updateProcessMobile(); }
+  if (window.innerWidth > 900) { updateProcessDesktop(); } else { updateProcessMobile(); }
 }
-
 window.addEventListener('scroll', updateProcess, { passive: true });
 window.addEventListener('touchmove', updateProcess, { passive: true });
 window.addEventListener('resize', updateProcess, { passive: true });
 setTimeout(updateProcess, 300);
 
-// ══ FORM dataLayer push for GTM conversion tracking ══
+// ══ FORM SUBMISSION — AJAX to Formspree (free plan compatible) ══
+// Submits in the background via fetch() so the page never navigates away.
+// GTM conversion tags (GA4 + Google Ads) fire reliably on this page
+// immediately after Formspree confirms the submission was received.
+// No paid Formspree plan or thank-you page redirect needed.
 var contactForm = document.getElementById('contactForm');
+
 if (contactForm) {
-  contactForm.addEventListener('submit', function() {
-    if (window.dataLayer) {
-      dataLayer.push({ event: 'form_submit_success', form_id: 'quote_form' });
-    }
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // Stop normal form POST which would navigate away
+
+    var btn = contactForm.querySelector('.form-submit');
+    var originalText = btn.textContent;
+    btn.textContent = 'Sending\u2026';
+    btn.disabled = true;
+
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        // Formspree accepted the submission — fire GTM conversion events now
+        if (window.dataLayer) {
+          dataLayer.push({ event: 'form_submit_success', form_id: 'quote_form' });
+        }
+
+        // Replace form with a clean success message
+        contactForm.innerHTML =
+          '<div style="text-align:center;padding:56px 24px;">' +
+            '<div style="width:64px;height:64px;background:rgba(58,111,216,0.12);border:2px solid rgba(58,111,216,0.35);' +
+              'border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;' +
+              'font-size:28px;color:#3a6fd8;">&#10003;</div>' +
+            '<p style="font-family:\'Barlow Condensed\',sans-serif;font-size:28px;font-weight:900;' +
+              'text-transform:uppercase;letter-spacing:-0.3px;color:#111;margin-bottom:10px;">' +
+              'Thanks \u2014 we\'ll be in touch</p>' +
+            '<p style="font-size:14px;color:#666;font-weight:300;line-height:1.6;">' +
+              'Your enquiry has been sent. We\'ll get back to you within 24\u00a0hours ' +
+              'to arrange a free visit and quote.</p>' +
+            '<p style="font-size:13px;color:#999;margin-top:14px;">' +
+              'Or call us now on <a href="tel:07764706116" style="color:#3a6fd8;">07764\u00a0706116</a></p>' +
+          '</div>';
+
+      } else {
+        // Formspree returned an error
+        btn.textContent = 'Something went wrong \u2014 please try again';
+        btn.disabled = false;
+        btn.style.background = '#c0392b';
+      }
+    })
+    .catch(function() {
+      // Network error — user is probably offline
+      btn.textContent = 'Could not send \u2014 please call us directly';
+      btn.disabled = false;
+      btn.style.background = '#c0392b';
+    });
   });
 }
 
